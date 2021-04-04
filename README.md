@@ -27,6 +27,10 @@ docker-ce:
 2. cd Test_task_for_Botkin
 3. mkdir tmp mydb pgdb
 4. docker-compose up -d 
-Создание и наполнение баз данных.
-sudo ./script.sh
+
+
+Создание и наполнение баз данных.  
+    sudo ./script.sh
+
+
 Далее следуем инструкциям в терминале. Создаем таблицы, наполняем данные.
