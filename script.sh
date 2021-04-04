@@ -45,7 +45,7 @@ function load_data_into_mysql(){
 			name=`echo ${costs[$i]} | cut -d '|' -f 2`
 			price=`echo ${costs[$i]} | cut -d '|' -f 3`
 			echo $id - $name - $price
-			docker exec -i mysql8 mysql -u root  testmy -e "INSERT INTO Costs (id, name, price) VALUES ($id, '$name', $price + 10)" 
+			docker exec -i mysql8 mysql -u root  testmy -e "INSERT INTO Costs (id, name, price) VALUES ($id, '$name', $price * 10)" 
 		done
 	for (( j = 0; j < 20; j++ ))
 		do
