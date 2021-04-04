@@ -1,0 +1,45 @@
+version: "3.9"
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: mysql8
+        restart: unless-stopped
+        environment:
+            MYSQL_USER: user 
+            MYSQ_PASSWORD: 123456
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_DATABASE: testmy
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./mydb:/var/lib/mysql
+        networks:
+            - app
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8081:8080      
+        networks:
+            - app      
+    postgres:
+        image: postgres
+        container_name: postgres
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: 123456
+            POSTGRES_DB: testpq
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./tmp:/tmp
+            - ./pgdb:/var/lib/postgresql/data
+        networks:
+            - app    
+networks:
+    app:
+        driver: bridge
+volumes:
+    mydb:
+    pqdb:       
