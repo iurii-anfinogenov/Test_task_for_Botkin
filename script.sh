@@ -29,6 +29,7 @@ function insert_to_table(){
 
 echo "Cоздать таблицы в БД нажмите 1"
 echo "Cохранить данные из БД postgres нажмите 2"
+echo "Наполнить таблицы товарами нажмите 3"
 echo "Выйти ctrl-C"
 read var
 case $var in
